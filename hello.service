@@ -1,0 +1,13 @@
+[Unit]
+Description=Hello Service
+After=network.target  # Optional: Defines when this service runs
+
+[Service]
+ExecStart=/usr/local/bin/hello.sh
+Restart=always         # Service will restart if it fails
+StandardOutput=journal # Logs output to systemd journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
